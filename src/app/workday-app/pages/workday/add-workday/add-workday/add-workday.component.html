@@ -1,0 +1,33 @@
+<title-component [title]='"Add workday"'/>
+
+<form class="flex flex-wrap justify-between">
+    <div class="w-1/8 p-2">
+       <label for="fecha" class="block text-sm font-medium text-gray-700">Fecha</label>
+       <input type="date" name="fecha" id="fecha" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+    </div>
+    <div class="w-1/8 p-2">
+       <label for="tipoJornada" class="block text-sm font-medium text-gray-700">Tipo de Jornada</label>
+       <select name="tipoJornada" id="tipoJornada" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+         <option value="">Seleccione un tipo de jornada</option>
+         <option value="fulltime">Full Time</option>
+         <option value="parttime">Part Time</option>
+       </select>
+    </div>
+    <div class="w-1/8 p-2">
+       <label for="horaEntrada" class="block text-sm font-medium text-gray-700">Hora de Entrada</label>
+       <input type="time" name="horaEntrada" id="horaEntrada" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+    </div>
+    <div class="w-1/8 p-2">
+       <label for="horaSalida" class="block text-sm font-medium text-gray-700">Hora de Salida</label>
+       <input type="time" name="horaSalida" id="horaSalida" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+    </div>
+    <div class="w-1/8 p-2">
+       <label for="id" class="block text-sm font-medium text-gray-700">ID</label>
+       <input type="text" name="id" id="id" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+    </div>
+    <div class="w-1/8 p-4">
+       <button type="submit" class="inline-flex justify-start py-1 px-3 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+         Enviar
+       </button>
+    </div>
+   </form>

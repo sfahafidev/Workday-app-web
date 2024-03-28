@@ -1,0 +1,40 @@
+<add-workday-component/>
+
+<div class="w-full mt-5">
+    
+    <title-component [title]="'Workdays List Employee'"/>
+
+
+    <div class="bg-white overflow-auto">
+        <table class="min-w-full bg-white">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="w-1/3 text-left py-3 px-4  font-semibold text-sm">ID</th>
+                    <th class="w-1/3 text-left py-3 px-4  font-semibold text-sm">Shift</th>
+                    <th class="w-1/3 text-left py-3 px-4  font-semibold text-sm">Date</th>
+                    <th class="w-1/3 text-left py-3 px-4  font-semibold text-sm">Time Of Arrival</th>
+                    <th class="w-1/3 text-left py-3 px-4  font-semibold text-sm">Departure Time</th>
+                    <th class="w-1/3 text-left py-3 px-4  font-semibold text-sm">Total Hours</th>
+                    <th class="w-1/3 text-left py-3 px-4  font-semibold text-sm">Approved</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-700">
+                @for (workday of workdayService.workdays(); track workday.id) {
+                    <tr>
+                        <td class="w-1/3 text-left py-3 px-4">{{workday.id}}</td>
+                        <td class="w-1/3 text-left py-3 px-4">{{workday.shift.descriptionEn | replaceUnderscore | titlecase }}</td>
+                        <td class="w-1/3 text-left py-3 px-4">{{workday.date | date:'dd/MM/yyyy' }}</td>
+                        <td class="w-1/3 text-left py-3 px-4">{{workday.timeOfArrival}}</td>
+                        <td class="w-1/3 text-left py-3 px-4">{{workday.departureTime}}</td>
+                        <td class="w-1/3 text-left py-3 px-4">{{workday.totalHours}}</td>
+                        <td class="w-1/3 text-left py-3 px-4">{{workday.approved}}</td>
+                    </tr>
+                }@empty {
+                    <h3>Espere por favor</h3>
+                }
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+

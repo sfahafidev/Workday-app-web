@@ -1,0 +1,59 @@
+<div
+  id="menu"
+  class="bg-blue-600 min-h-screen z-10 text-white w-64 left-0 h-screen"
+>
+
+<div class="p-6">
+    <a class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
+    <button class="w-full bg-white text-blue-600 font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
+        <i class="fas fa-plus mr-3"></i> New Report
+    </button>
+</div>
+
+  <div id="profile" class="text-center py-3">
+    <p class="text-white text-center pb-1">Bienvenido</p>
+    <a href="#" class="inline-flex space-x-2 items-center">
+      <span>
+        <img
+          class="rounded-full w-8 h-8"
+          src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=128&q=80"
+          alt=""
+        />
+      </span>
+      <span class="text-sm md:text-base font-bold"> Edward Tompson </span>
+    </a>
+  </div>
+
+  <div id="nav" class="w-full">
+    @for (item of menuItems; track $index ) {
+
+    <a
+      [routerLink]="item.path"
+      routerLinkActive="bg-blue-700"
+      class="w-full inline-flex  items-center justify-center py-6 hover:bg-blue-700 transition ease-linear duration-150"
+    >
+      <!--<div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 text-white"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"
+          />
+        </svg>
+      </div>-->
+
+      <div class="flex flex-col">
+        <span class="text-lg font-bold leading-5 text-white">{{item.title}}</span>
+      </div>
+    </a>
+
+    }
+  </div>
+</div>
