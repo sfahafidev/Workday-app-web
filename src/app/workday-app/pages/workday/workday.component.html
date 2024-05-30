@@ -26,7 +26,7 @@
                         <td class="w-1/3 text-left py-3 px-4">{{workday.date | date:'dd/MM/yyyy' }}</td>
                         <td class="w-1/3 text-left py-3 px-4">{{workday.timeOfArrival}}</td>
                         <td class="w-1/3 text-left py-3 px-4">{{workday.departureTime}}</td>
-                        <td class="w-1/3 text-left py-3 px-4">{{workday.totalHours}}</td>
+                        <td class="w-1/3 text-left py-3 px-4">{{workday.totalHours | number : '1.1-1'}}</td>
                         <td class="w-1/3 text-left py-3 px-4">{{workday.approved}}</td>
                     </tr>
                 }@empty {

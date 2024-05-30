@@ -8,3 +8,11 @@ export interface AddWorkdays {
     idEmployee: number;
   
   }
+
+
+  export interface AddWorkdaysRespose {
+    name: string;
+    kindOfShift: string;
+    date: string; 
+    totalHours: number;
+  }

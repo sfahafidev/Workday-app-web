@@ -3,7 +3,7 @@ import { WorkdayService } from '../../../service/workday.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ReplaceUnderscorePipe } from '../../../shared/pipes/replace-underscore.pipe';
-import { AddWorkdayComponent } from './add-workday/add-workday/add-workday.component';
+import { AddWorkdayComponent } from './add-workday/add-workday.component';
 import { TitleComponent } from '../../../shared/title/title.component';
 
 @Component({
@@ -21,5 +21,6 @@ import { TitleComponent } from '../../../shared/title/title.component';
 export default class WorkdayComponent {
 
   workdayService = inject(WorkdayService);
+
 
 }

@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
 import { Workdays } from '../workday-app/pages/interfaces/workday';
+import { Observable, catchError, throwError } from 'rxjs';
+import { NewWorkday } from '../models/newWorkday';
 
 
 @Injectable({
@@ -19,7 +21,19 @@ export class WorkdayService {
       this.workdays.set(resp);
     })
 
-    
-
    }
+
+   //getKindOfShift(): Observable<Object> {}
+
+   addWorkday(workday: NewWorkday): Observable<Object> {
+      return this.http.post('http://localhost:8080/assist-control/v1/workday', workday)
+        .pipe(catchError(this.manejoErrores));
+   }
+
+
+   private manejoErrores(error: HttpErrorResponse){
+    return throwError(() => error.error);
+  }
+
+
 }
