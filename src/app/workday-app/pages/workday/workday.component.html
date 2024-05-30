@@ -2,7 +2,8 @@
 
 <div class="w-full mt-5">
     
-    <title-component [title]="'Workdays List Employee'"/>
+    <title-component [title]="'Workdays List Employee'"/> 
+    <p>Total horas: {{totalHours}}</p>
 
 
     <div class="bg-white overflow-auto">
@@ -19,7 +20,7 @@
                 </tr>
             </thead>
             <tbody class="text-gray-700">
-                @for (workday of workdayService.workdays(); track workday.id) {
+                @for (workday of workdays(); track workday.id) {
                     <tr>
                         <td class="w-1/3 text-left py-3 px-4">{{workday.id}}</td>
                         <td class="w-1/3 text-left py-3 px-4">{{workday.shift.descriptionEn | replaceUnderscore | titlecase }}</td>
@@ -30,7 +31,7 @@
                         <td class="w-1/3 text-left py-3 px-4">{{workday.approved}}</td>
                     </tr>
                 }@empty {
-                    <h3>Espere por favor</h3>
+                    <h3>No ha cargado horas esta semana.</h3>
                 }
                 
             </tbody>

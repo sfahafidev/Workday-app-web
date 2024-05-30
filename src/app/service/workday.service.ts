@@ -23,6 +23,10 @@ export class WorkdayService {
 
    }
 
+   getWorkdaysCurrentWeek(): Observable<Workdays[]> {
+    return this.http.get<Workdays[]>('http://localhost:8080/assist-control/v1/workdays/1');
+   }
+
    //getKindOfShift(): Observable<Object> {}
 
    addWorkday(workday: NewWorkday): Observable<Object> {
